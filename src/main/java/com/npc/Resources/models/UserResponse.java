@@ -2,11 +2,11 @@ package com.npc.Resources.models;
 
 import java.util.List;
 
-import com.npc.Models.UserClass;
+import com.npc.Models.User;
 
-public class UserResponse extends ResourceResponse<UserClass> {
+public class UserResponse extends ResourceResponse<User> {
 
-    public UserResponse(List<UserClass> data) {
+    public UserResponse(List<User> data) {
         super(data);
     }
 }

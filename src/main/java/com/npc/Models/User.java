@@ -5,7 +5,7 @@ import java.util.Date;
 
 import com.npc.PanacheEntities.UserEntity;
 
-public class UserClass implements Serializable {
+public class User implements Serializable {
     private int id;
     private int user_type;
     private String email;
@@ -14,7 +14,7 @@ public class UserClass implements Serializable {
     private String user_token;
     private Date token_expiration;
 
-    public UserClass(String email, String pass, boolean logged_in, String token, Date token_expir) {
+    public User(String email, String pass, boolean logged_in, String token, Date token_expir) {
         this.email = email;
         this.password = pass;
         this.logged_in = logged_in;
@@ -22,7 +22,7 @@ public class UserClass implements Serializable {
         this.token_expiration = token_expir;
     }
 
-    public UserClass(int uid, int user_type, String email, String pass, boolean logged_in, String token,
+    public User(int uid, int user_type, String email, String pass, boolean logged_in, String token,
             Date token_expir) {
         this.id = uid;
         this.user_type = user_type;
@@ -33,7 +33,7 @@ public class UserClass implements Serializable {
         this.token_expiration = token_expir;
     }
 
-    public UserClass(UserEntity userEntity) {
+    public User(UserEntity userEntity) {
         // this.id = userEntity.id.intValue();
         this.id = 1;
         this.user_type = userEntity.user_type;

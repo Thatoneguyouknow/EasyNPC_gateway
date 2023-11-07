@@ -3,7 +3,7 @@ package com.npc.Resources;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.npc.Models.UserClass;
+import com.npc.Models.User;
 import com.npc.PanacheEntities.UserEntity;
 import com.npc.Resources.models.UserResponse;
 
@@ -21,10 +21,10 @@ public class UserResource {
         // Sort.by("uid")
         List<UserEntity> entities = UserEntity.listAll();
 
-        List<UserClass> userClasses = new ArrayList<>();
+        List<User> userClasses = new ArrayList<>();
         if (entities != null) {
             for (UserEntity entity : entities) {
-                UserClass userClass = new UserClass(entity);
+                User userClass = new User(entity);
                 userClasses.add(userClass);
             }
         }
