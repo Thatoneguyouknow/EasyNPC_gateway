@@ -16,4 +16,7 @@ public class SubraceEntity extends PanacheEntity{
 
     @Column
     public Integer[] ability_score_increase_value;
+
+    @Column
+    public Integer associated_name_scheme;
 }

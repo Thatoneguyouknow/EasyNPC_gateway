@@ -9,6 +9,7 @@ import jakarta.ws.rs.Path;
 
 import com.npc.Models.NpcRace;
 import com.npc.PanacheEntities.RaceEntity;
+import com.npc.PanacheEntities.RaceSubraceMappingEntity;
 import com.npc.Resources.models.RaceResponse;
 
 import io.quarkus.panache.common.Sort;
@@ -19,11 +20,13 @@ public class RaceResource {
     @GET
     public RaceResponse get() {
         List<RaceEntity> entities = RaceEntity.listAll(Sort.by("id"));
+        List<RaceSubraceMappingEntity> mappings = RaceSubraceMappingEntity.listAll();
 
         List<NpcRace> npcRaces = new ArrayList<>();
         if (entities != null) {
             for (RaceEntity entity : entities) {
-                NpcRace npcRace = new NpcRace(entity);
+                RaceSubraceMappingEntity[] raceMapping = mappings.stream().filter(mapping -> entity.id.equals(mapping.race_id)).toArray(RaceSubraceMappingEntity[]::new);
+                NpcRace npcRace = new NpcRace(entity, raceMapping);
                 npcRaces.add(npcRace);
             }
         }

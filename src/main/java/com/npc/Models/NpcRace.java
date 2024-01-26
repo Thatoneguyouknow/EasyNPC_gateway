@@ -1,8 +1,10 @@
 package com.npc.Models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 import com.npc.PanacheEntities.RaceEntity;
+import com.npc.PanacheEntities.RaceSubraceMappingEntity;
 
 public class NpcRace implements Serializable {
     private int id;
@@ -15,9 +17,10 @@ public class NpcRace implements Serializable {
     private int[] ageRange;
     private Integer[] ability_score_increase;
     private Integer[] ability_score_increase_value;
+    private Long[] subraces;
 
     public NpcRace(int user_id, String name, int nameType, int alignment, int[] height, int[] weight, int[] age, Integer[] asi,
-            Integer[] asiv) {
+            Integer[] asiv, Long[] subraces) {
         this.user_id = user_id;
         this.name = name;
         this.name_type = nameType;
@@ -27,6 +30,7 @@ public class NpcRace implements Serializable {
         this.ageRange = age;
         this.ability_score_increase = asi;
         this.ability_score_increase_value = asiv;
+        this.subraces = subraces;
     }
 
     // Because PostGres does not save ranges as inclusive, ranges are saved with upper limit exclusive
@@ -43,6 +47,27 @@ public class NpcRace implements Serializable {
         this.ability_score_increase = raceEntity.ability_score_increase;
         this.ability_score_increase_value = raceEntity.ability_score_increase_value;
     }
+
+    public NpcRace(RaceEntity raceEntity, RaceSubraceMappingEntity[] subraces) {
+        this.id = raceEntity.id.intValue();
+        this.user_id = raceEntity.user_id;
+        this.name = raceEntity.name;
+        this.name_type = raceEntity.name_type;
+        this.alignment_skew = raceEntity.alignment_skew;
+        this.heightRange = new int[]{raceEntity.height.lower(), raceEntity.height.upper() - 1};
+        this.weightRange = new int[]{raceEntity.weight.lower(), raceEntity.weight.upper() - 1};
+        this.ageRange = new int[]{raceEntity.age.lower(), raceEntity.age.upper() -1 };
+        this.ability_score_increase = raceEntity.ability_score_increase;
+        this.ability_score_increase_value = raceEntity.ability_score_increase_value;
+        
+        ArrayList<Long> subrace = new ArrayList<Long>();
+        for (RaceSubraceMappingEntity entity : subraces) {
+            subrace.add((Long)entity.subrace_id);
+        }
+        this.subraces = subrace.toArray(Long[]::new);
+    }
+
+
 
     public int getID() {
         return id;
@@ -98,6 +123,10 @@ public class NpcRace implements Serializable {
 
     public Integer[] getASIV() {
         return ability_score_increase_value;
+    }
+
+    public Long[] getSubraces() {
+        return subraces;
     }
 
 }
