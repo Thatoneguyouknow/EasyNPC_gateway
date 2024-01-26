@@ -1,6 +1,8 @@
 package com.npc.NamingLogic;
 
-public class NameScheme {
+import java.io.Serializable;
+
+public class NameScheme implements Serializable{
     private int nameID;
     private String[] firstHalfStrings;
     private String[] secondHalfStrings;
@@ -15,11 +17,11 @@ public class NameScheme {
         return nameID;
     }
 
-    public String[] getfirstHavles() {
+    public String[] getfirstHalves() {
         return firstHalfStrings;
     }
 
-    public String[] getsecondHavles() {
+    public String[] getsecondHalves() {
         return secondHalfStrings;
     }
 }

@@ -1,5 +1,6 @@
 package com.npc.NamingLogic;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 // This will be the default naming scheme for each race.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 // If the race has subrace dependent names, they will be bound by that ID
 // Otherwise the ID will go unused
 
-public class RaceNameScheme {
+public class RaceNameScheme implements Serializable {
     private int nameID;
     private ArrayList<NameScheme> firstNames;
     private ArrayList<NameScheme> lastNames;
@@ -17,5 +18,17 @@ public class RaceNameScheme {
         this.nameID = name_id;
         this.firstNames = firsts;
         this.lastNames = lasts;
+    }
+
+    public int getID() {
+        return nameID;
+    }
+
+    public ArrayList<NameScheme> getFirstNames() {
+        return firstNames;
+    }
+
+    public ArrayList<NameScheme> getLastNames() {
+        return lastNames;
     }
 }
