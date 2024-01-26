@@ -4,418 +4,318 @@ import java.util.ArrayList;
 
 public class Naming {
 
-    public ArrayList<RaceNameScheme> createNames() {
-        ArrayList<RaceNameScheme> names = new ArrayList<RaceNameScheme>();
-        RaceNameScheme dwarf = dwarfNames();
-        RaceNameScheme elf = elfNames();
-        RaceNameScheme halfling = halflingNames();
+        public ArrayList<RaceNameScheme> createNames() {
+                ArrayList<RaceNameScheme> names = new ArrayList<RaceNameScheme>();
+                RaceNameScheme dwarf = dwarfNames();
+                RaceNameScheme elf = elfNames();
+                RaceNameScheme halfling = halflingNames();
+                RaceNameScheme human = humanNames();
+                RaceNameScheme dragonborn = dragonbornNames();
+                RaceNameScheme gnome = gnomeNames();
+                RaceNameScheme halfOrc = halfOrcNames();
+                RaceNameScheme tiefling = tieflingNames();
+                names.add(dwarf);
+                names.add(elf);
+                names.add(halfling);
+                names.add(human);
+                names.add(dragonborn);
+                names.add(gnome);
+                names.add(halfOrc);
+                names.add(tiefling);
+                return names;
+        }
 
-        return names;
-    }
+        public String createName() {
+                return "";
+        }
 
-    public RaceNameScheme dwarfNames() {
-        // Dwarf names should be formatted:
-        // First Name of clan Last Name
-        ArrayList<NameScheme> dwarfFirstNames = new ArrayList<NameScheme>();
-        String[] dFirstNames = { "ad", "alb", "am", "bae", "bar", "bro", "brue", "dai", "dar", "de", "ebe", "ein",
-                "far",
-                "fli", "gar", "har", "kil", "mor", "or", "os", "ran", "ru", "tak", "thor", "tor", "trau", "tra", "ulf",
-                "ve", "von", "ar", "aud", "bard", "oag", "eld", "falk", "fin", "gunn", "hel", "hli", "kath", "kris",
-                "li", "lift", "mar", "ris", "san", "vis" };
-        String[] dLastNames = { "ber", "rik", "rich", "rn", "endd", "ttor",
-                "nor", "n", "rak", "lg", "erk", "kil", "grim", "nt", "dain", "bek", "gran",
-                "sik", "kar", "linn", "din", "in", "dek", "bon", "vok", "gar", "it", "dal",
-                "tin", "hild", "dryn", "nal", "eth", "runn", "ellen", "loda", "dis", "ja",
-                "ra", "de", "rasa", "red", "wynn", "nl", "bera", "ga" };
-        NameScheme dwarf = new NameScheme(1, dFirstNames, dLastNames);
-        dwarfFirstNames.add(dwarf);
+        public RaceNameScheme dwarfNames() {
+                // Dwarf names should be formatted:
+                // First Name of clan Last Name
+                ArrayList<NameScheme> dwarfFirstNames = new ArrayList<NameScheme>();
+                String[] dFirstNames = { "ad", "alb", "am", "bae", "bar", "bro", "brue", "dai", "dar", "de", "ebe",
+                                "ein",
+                                "far",
+                                "fli", "gar", "har", "kil", "mor", "or", "os", "ran", "ru", "tak", "thor", "tor",
+                                "trau", "tra", "ulf",
+                                "ve", "von", "ar", "aud", "bard", "oag", "eld", "falk", "fin", "gunn", "hel", "hli",
+                                "kath", "kris",
+                                "li", "lift", "mar", "ris", "san", "vis" };
+                String[] dLastNames = { "ber", "rik", "rich", "rn", "endd", "ttor",
+                                "nor", "n", "rak", "lg", "erk", "kil", "grim", "nt", "dain", "bek", "gran",
+                                "sik", "kar", "linn", "din", "in", "dek", "bon", "vok", "gar", "it", "dal",
+                                "tin", "hild", "dryn", "nal", "eth", "runn", "ellen", "loda", "dis", "ja",
+                                "ra", "de", "rasa", "red", "wynn", "nl", "bera", "ga" };
+                NameScheme dwarf = new NameScheme(1, dFirstNames, dLastNames);
+                dwarfFirstNames.add(dwarf);
 
-        ArrayList<NameScheme> dwarfLastNames = new ArrayList<NameScheme>();
-        String[] dwarf_mFirst = { "battle", "brawn", "fire", "frost", "iron", "stout", "stone", "war", "ice", "cave" };
-        String[] dwarf_mLast = { "hammer", "forge", "beard", "fist", "axe",
-                "mane", "crucible", "sheild", "beer", "mine" };
-        NameScheme mountianDwarf = new NameScheme(2, dwarf_mFirst, dwarf_mLast);
+                ArrayList<NameScheme> dwarfLastNames = new ArrayList<NameScheme>();
+                String[] dwarf_mFirst = { "battle", "brawn", "fire", "frost", "iron", "stout", "stone", "war", "ice",
+                                "cave" };
+                String[] dwarf_mLast = { "hammer", "forge", "beard", "fist", "axe",
+                                "mane", "crucible", "sheild", "beer", "mine" };
+                NameScheme mountianDwarf = new NameScheme(2, dwarf_mFirst, dwarf_mLast);
 
-        String[] dwarf_hFirst = { "bal", "oan", "gor", "holder", "lod", "lut",
-                "rumna", "strak", "tor", "un", "ult", "sman", "mord" };
-        String[] dwarf_hLast = { "erk", "kil", "unn", "hek", "err", "gehr",
-                "heim", "eln", "gart", "durch", "vidur", "urs", "dir" };
-        NameScheme hillDwarf = new NameScheme(3, dwarf_hFirst, dwarf_hLast);
-        dwarfLastNames.add(hillDwarf);
-        dwarfLastNames.add(mountianDwarf);
+                String[] dwarf_hFirst = { "bal", "oan", "gor", "holder", "lod", "lut",
+                                "rumna", "strak", "tor", "un", "ult", "sman", "mord" };
+                String[] dwarf_hLast = { "erk", "kil", "unn", "hek", "err", "gehr",
+                                "heim", "eln", "gart", "durch", "vidur", "urs", "dir" };
+                NameScheme hillDwarf = new NameScheme(3, dwarf_hFirst, dwarf_hLast);
+                dwarfLastNames.add(hillDwarf);
+                dwarfLastNames.add(mountianDwarf);
 
-        RaceNameScheme dwarfNames = new RaceNameScheme(0, dwarfFirstNames, dwarfLastNames);
-        return dwarfNames;
-    }
+                RaceNameScheme dwarfNames = new RaceNameScheme(0, dwarfFirstNames, dwarfLastNames);
+                return dwarfNames;
+        }
 
-    public RaceNameScheme elfNames() {
-        // Elf names should be formatted:
-        // First name Last name
-        ArrayList<NameScheme> elfFirstNames = new ArrayList<NameScheme>();
-        String[] eFirstNames = { "adr", "ael", "ara", "au", "bei", "ber", "car",
-                "eni", "erd", "ere", "galinn", "had", "hei", "imm", "ivell", "lau", "mind",
-                "pae", "per", "qua", "ria", "rol", "sov", "tham", "thar", "ther", "var",
-                "alth", "anast", "and", "ant", "beth", "bir", "cae", "oru", "enn", "felo",
-                "lel", "jel", "key", "lesh", "li", "meri", "mia", "nai", "quel", "quil",
-                "sar", "shan", "sha", "sil", "their", "thi", "vad", "val", "xana" };
-        String[] eLastNames = { "an", "ar", "mil", "st", "ro", "rian", "rie",
-                "alis", "van", "dan", "rai", "o", "eral", "ios", "cian", "artis", "lias",
-                "en", "rion", "don", "eliss", "ior", "ivol", "is", "ie", "aea", "rianna",
-                "raste", "inua", "rynna", "el", "lynn", "silia", "a", "sial", "enia",
-                "enneth", "leth", "anna", "ele", "lee", "vara", "enna", "lathe", "iel",
-                "airaa", "va", "qui", "astra", "ania", "anthe", "phia" };
-        NameScheme elfFirst = new NameScheme(4, eFirstNames, eLastNames);
-        elfFirstNames.add(elfFirst);
+        public RaceNameScheme elfNames() {
+                // Elf names should be formatted:
+                // First name Last name
+                ArrayList<NameScheme> elfFirstNames = new ArrayList<NameScheme>();
+                String[] eFirstNames = { "adr", "ael", "ara", "au", "bei", "ber", "car",
+                                "eni", "erd", "ere", "galinn", "had", "hei", "imm", "ivell", "lau", "mind",
+                                "pae", "per", "qua", "ria", "rol", "sov", "tham", "thar", "ther", "var",
+                                "alth", "anast", "and", "ant", "beth", "bir", "cae", "oru", "enn", "felo",
+                                "lel", "jel", "key", "lesh", "li", "meri", "mia", "nai", "quel", "quil",
+                                "sar", "shan", "sha", "sil", "their", "thi", "vad", "val", "xana" };
+                String[] eLastNames = { "an", "ar", "mil", "st", "ro", "rian", "rie",
+                                "alis", "van", "dan", "rai", "o", "eral", "ios", "cian", "artis", "lias",
+                                "en", "rion", "don", "eliss", "ior", "ivol", "is", "ie", "aea", "rianna",
+                                "raste", "inua", "rynna", "el", "lynn", "silia", "a", "sial", "enia",
+                                "enneth", "leth", "anna", "ele", "lee", "vara", "enna", "lathe", "iel",
+                                "airaa", "va", "qui", "astra", "ania", "anthe", "phia" };
+                NameScheme elfFirst = new NameScheme(4, eFirstNames, eLastNames);
+                elfFirstNames.add(elfFirst);
 
-        ArrayList<NameScheme> elfLastNames = new ArrayList<NameScheme>();
-        String[] eFamilyFirst = { "gem", "star", "moon", "diamond", "ruby",
-                "silver", "gold", "night", "wind", "dark", "aqua", "river", "sapphire",
-                "emerald", "obsidian", "oak", "spruce", "pine", "juniper", "birch" };
-        String[] eFamilyLast = { "flower", "whisper", "dew", "blossom", "frond",
-                "heel", "breeze", "brook", "petal" };
-        NameScheme elfLast = new NameScheme(5, eFamilyFirst, eFamilyLast);
-        elfLastNames.add(elfLast);
+                ArrayList<NameScheme> elfLastNames = new ArrayList<NameScheme>();
+                String[] eFamilyFirst = { "gem", "star", "moon", "diamond", "ruby",
+                                "silver", "gold", "night", "wind", "dark", "aqua", "river", "sapphire",
+                                "emerald", "obsidian", "oak", "spruce", "pine", "juniper", "birch" };
+                String[] eFamilyLast = { "flower", "whisper", "dew", "blossom", "frond",
+                                "heel", "breeze", "brook", "petal" };
+                NameScheme elfLast = new NameScheme(5, eFamilyFirst, eFamilyLast);
+                elfLastNames.add(elfLast);
 
-        RaceNameScheme elfNames = new RaceNameScheme(1, elfFirstNames, elfLastNames);
-        return elfNames;
-    }
+                RaceNameScheme elfNames = new RaceNameScheme(1, elfFirstNames, elfLastNames);
+                return elfNames;
+        }
 
-    public String createName() {
-        return "";
-    }
+        public RaceNameScheme halflingNames() {
+                // Halfling Names should be formatted:
+                // First Name Last name
+                ArrayList<NameScheme> halflingFirstNames = new ArrayList<NameScheme>();
+                String[] hFirstNames = { "alt", "and", "ca", "cor", "eld", "er", "fin",
+                                "gar", "lind", "ly", "mer", "mil", "os", "per", "ros", "wel", "br", "cal",
+                                "cor", "euph", "jill", "kith", "lavi", "lid", "merl", "nedd", "pae", "port",
+                                "sera", "shae", "van", "ver" };
+                String[] hLastNames = { "on", "er", "de", "rin", "rich", "nan", "ret",
+                                "al", "ric", "o", "born", "coe", "lby", "ry", "ee", "lie", "a", "emia",
+                                "ian", "ri", "via", "da", "la", "ia", "phina", "na", "i" };
+                NameScheme halflingFirst = new NameScheme(6, hFirstNames, hLastNames);
+                halflingFirstNames.add(halflingFirst);
 
-    public RaceNameScheme halflingNames() {
-        // Halfling Names should be formatted:
-        // First Name Last name
-        ArrayList<NameScheme> halflingFirstNames = new ArrayList<NameScheme>();
-        String[] hFirstNames = { "alt", "and", "ca", "cor", "eld", "er", "fin",
-                "gar", "lind", "ly", "mer", "mil", "os", "per", "ros", "wel", "br", "cal",
-                "cor", "euph", "jill", "kith", "lavi", "lid", "merl", "nedd", "pae", "port",
-                "sera", "shae", "van", "ver" };
-        String[] hLastNames = { "on", "er", "de", "rin", "rich", "nan", "ret",
-                "al", "ric", "o", "born", "coe", "lby", "ry", "ee", "lie", "a", "emia",
-                "ian", "ri", "via", "da", "la", "ia", "phina", "na", "i" };
-        NameScheme halflingFirst = new NameScheme(6, hFirstNames, hLastNames);
-        halflingFirstNames.add(halflingFirst);
+                ArrayList<NameScheme> halflingLastNames = new ArrayList<NameScheme>();
+                String[] hFamilyFirst = { "brush", "good", "green", "high", "under",
+                                "toss", "tea", "lea", "thorn", "branch", "bright", "thicket" };
+                String[] hFamilyLast = { "gather", "barrel", "bottle", "hill", "topple",
+                                "leaf", "gage", "cobble", "bough", "burow", "pond", "grass" };
+                NameScheme halflingLast = new NameScheme(7, hFamilyFirst, hFamilyLast);
+                halflingLastNames.add(halflingLast);
 
-        ArrayList<NameScheme> halflingLastNames = new ArrayList<NameScheme>();
-        String[] hFamilyFirst = { "brush", "good", "green", "high", "under",
-                "toss", "tea", "lea", "thorn", "branch", "bright", "thicket" };
-        String[] hFamilyLast = { "gather", "barrel", "bottle", "hill", "topple",
-                "leaf", "gage", "cobble", "bough", "burow", "pond", "grass" };
-        NameScheme halflingLast = new NameScheme(7, hFamilyFirst, hFamilyLast);
-        halflingLastNames.add(halflingLast);
+                RaceNameScheme halflingNames = new RaceNameScheme(2, halflingFirstNames, halflingLastNames);
+                return halflingNames;
+        }
 
-        RaceNameScheme halflingNames = new RaceNameScheme(2, halflingFirstNames, halflingLastNames);
-        return halflingNames;
-    }
+        public RaceNameScheme humanNames() {
+                // Human names should be formatted:
+                // First name Last name
+                // Human Names are based on ethnicity only
+                ArrayList<NameScheme> humanFirstNames = new ArrayList<NameScheme>();
+                String[] calishiteNamesFirst = { "as", "bar", "has", "khe", "meh", "sude",
+                                "zash", "ala", "ceid", "ham", "jas", "meil", "seip", "yash" };
+                String[] calishiteNamesLast = { "eir", "deid", "med", "men", "iman", "la", "il",
+                                "a", "mal", "ora", "eira", "eida" };
+                NameScheme calishiteFirst = new NameScheme(8, calishiteNamesFirst, calishiteNamesLast);
+                // Chondathan names used for tethyrian also
+                String[] chondathanNamesFirst = { "dar", "dor", "even", "gor", "gri", "hel", "mal", "mor",
+                                "ran", "ste", "arv", "esv", "jhes", "ker", "lur", "mir", "row", "shan", "tess" };
+                String[] chondathanNamesLast = { "vin", "n", "dur", "stag", "m", "ark", "dal",
+                                "dd", "eene", "ele", "sail", "ri", "i", "an", "dri" };
+                NameScheme chondathanFirst = new NameScheme(9, chondathanNamesFirst, chondathanNamesLast);
+                String[] damaranNamesFirst = { "ba", "fad", "gla", "gri", "i", "ko", "miv",
+                                "or", "pav", "ser", "aleth", "ka", "kater", "ma", "nata", "ol", "ta", "zo" };
+                String[] damaranNamesLast = { "r", "ei", "gor", "gan", "vor", "sef", "al", "el",
+                                "ra", "nin", "li", "ma", "na" };
+                NameScheme damaranFirst = new NameScheme(10, damaranNamesFirst, damaranNamesLast);
+                String[] illuskanNamesFirst = { "and", "bla", "bra", "fra", "ge", "land", "lu", "mal",
+                                "sto", "tam", "ur", "ama", "beth", "ce", "keth", "ma", "olg", "sili", "west" };
+                String[] illuskanNamesLast = { "er", "th", "n", "cer", "r", "an", "frey", "a", "ra" };
+                NameScheme illuskanFirst = new NameScheme(11, illuskanNamesFirst, illuskanNamesLast);
+                String[] mulanNamesFirst = { "ao", "bare", "ehput", "ketho", "mum", "ram", "so", "thazar",
+                                "ur", "ariz", "cha", "neph", "nul", "Muri", "sef", "tho", "um", "zol" };
+                String[] mulanNamesLast = { "th", "ris", "-ki", "ed", "as", "-kehur", "-de",
+                                "hur", "ima", "thi", "is", "ara", "la" };
+                NameScheme mulanFirst = new NameScheme(12, mulanNamesFirst, mulanNamesLast);
+                String[] rashemiNamesFirst = { "bori", "faur", "jan", "kani", "madi", "ralme",
+                                "shau", "vladi", "fyev", "hul", "im", "nev", "shev", "tamm", "yul" };
+                String[] rashemiNamesLast = { "vik", "gar", "dar", "thar", "slak", "mar",
+                                "arra", "mith", "zel", "dra" };
+                NameScheme rashemiFirst = new NameScheme(13, rashemiNamesFirst, rashemiNamesLast);
+                String[] shouNamesFirst = { "a", "che", "ch", "fa", "ji", "ju", "li", "lo",
+                                "me", "o", "shu", "w", "ba", "ch", "le", "me", "qi", "ta" };
+                String[] shouNamesLast = { "n", "i", "ang", "an", "ng", "en", "ao" };
+                NameScheme shouFirst = new NameScheme(14, shouNamesFirst, shouNamesLast);
+                String[] turamiNamesFirst = { "an", "di", "marc", "pier", "rim", "rom", "sala",
+                                "umb", "bal", "do", "fai", "jal", "lu", "mar", "qua", "se", "von" };
+                String[] turamiNamesLast = { "ton", "ero", "on", "ardo", "zar", "ama", "na",
+                                "la", "isa", "ana", "ta", "ra", "lise", "da" };
+                NameScheme turamiFirst = new NameScheme(15, turamiNamesFirst, turamiNamesLast);
+                humanFirstNames.add(calishiteFirst);
+                humanFirstNames.add(chondathanFirst);
+                humanFirstNames.add(damaranFirst);
+                humanFirstNames.add(illuskanFirst);
+                humanFirstNames.add(mulanFirst);
+                humanFirstNames.add(rashemiFirst);
+                humanFirstNames.add(shouFirst);
+                humanFirstNames.add(turamiFirst);
+
+                ArrayList<NameScheme> humanLastNames = new ArrayList<NameScheme>();
+                String[] calishiteFamFirst = { "bash", "dum", "jas", "khal", "mos", "pash", "re" };
+                String[] calishiteFamLast = { "a", "ein", "san", "id", "tana", "ar", "in" };
+                NameScheme calishiteLast = new NameScheme(8, calishiteFamFirst, calishiteFamLast);
+                String[] chondathanFamFirst = { "amble", "buck", "dun", "even", "grey", "tall",
+                                "black", "white", "dunder" };
+                String[] chondathanFamLast = { "crown", "man", "dragon", "wood", "castle",
+                                "stag", "lord", "hill" };
+                NameScheme chondathanLast = new NameScheme(9, chondathanFamFirst, chondathanFamLast);
+                String[] damaranFamFirst = { "ber", "cher", "dot", "kulen", "mar", "nemet",
+                                "shem", "star" };
+                // Added my own 'tst' for fun
+                String[] damaranFamLast = { "sk", "nin", "ov", "ag", "tst" };
+                NameScheme damaranLast = new NameScheme(10, damaranFamFirst, damaranFamLast);
+                String[] illuskanFamFirst = { "bright", "horn", "lack", "storm", "wind", "dark", "skull", "thunder" };
+                String[] illuskanFamLast = { "wood", "raven", "man", "terror", "rivver", "crow", "root", "sea" };
+                NameScheme illuskanLast = new NameScheme(11, illuskanFamFirst, illuskanFamLast);
+                String[] mulanFamFirst = { "ank", "ansk", "fe", "hah", "nath", "sep", "uuth" };
+                String[] mulanFamLast = { "halab", "uld", "zim", "pet", "andem", "ret", "rakt" };
+                NameScheme mulanLast = new NameScheme(12, mulanFamFirst, mulanFamLast);
+                String[] rashemiFamFirst = { "cher", "dyer", "iltaz", "murnyet", "staya", "ulmo" };
+                String[] rashemiFamLast = { "goba", "nina", "yara", "hara", "noga", "kina" };
+                NameScheme rashemiLast = new NameScheme(13, rashemiFamFirst, rashemiFamLast);
+                String[] shouFamFirst = { "chi", "hu", "ka", "ku", "la", "li", "me", "pi",
+                                "shi", "su", "ta", "wa" };
+                String[] shouFamLast = { "en", "ang", "o", "ong", "i", "n", "m" };
+                NameScheme shouLast = new NameScheme(14, shouFamFirst, shouFamLast);
+                String[] turamiFamFirst = { "ago", "asto", "cala", "do", "fal", "mari", "pisa", "ram" };
+                String[] turamiFamLast = { "sto", "rio", "bra", "mine", "one", "valdi", "car", "ondo" };
+                NameScheme turamiLast = new NameScheme(15, turamiFamFirst, turamiFamLast);
+                humanLastNames.add(calishiteLast);
+                humanLastNames.add(chondathanLast);
+                humanLastNames.add(damaranLast);
+                humanLastNames.add(illuskanLast);
+                humanLastNames.add(mulanLast);
+                humanLastNames.add(rashemiLast);
+                humanLastNames.add(shouLast);
+                humanLastNames.add(turamiLast);
+
+                RaceNameScheme humanNames = new RaceNameScheme(3, humanFirstNames, humanLastNames);
+                return humanNames;
+        }
+
+        public RaceNameScheme dragonbornNames() {
+                ArrayList<NameScheme> dragonbornFirstNames = new ArrayList<NameScheme>();
+                String[] dFirstNames = { "arj", "bal", "bhar", "don", "ghe", "hesk",
+                                "kr", "med", "meh", "nad", "pand", "pat", "rho", "sham", "shed", "tar",
+                                "tor", "ak", "bi", "fari", "har", "havi", "jhe", "ka", "kor", "mish", "na",
+                                "per", "rai", "so", "sur", "tha", "uad" };
+                String[] dLastNames = { "han", "asar", "ash", "aar", "sh", "an", "iv",
+                                "rash", "en", "arr", "jed", "rin", "gar", "inn", "hun", "ra", "ri", "deh",
+                                "ann", "lar", "va", "la", "ina", "jit" };
+                NameScheme dragonFirst = new NameScheme(16, dFirstNames, dLastNames);
+                dragonbornFirstNames.add(dragonFirst);
+
+                ArrayList<NameScheme> dragonbornLastNames = new ArrayList<NameScheme>();
+                String[] dFamFirst = { "clethtin", "daarden", "delmi", "drache",
+                                "fenken", "kepesh", "kerr", "kimba", "linxaka", "myas", "nemmo", "norix",
+                                "ophinsh", "prexi", "shestende", "turnu", "verthi", "yar" };
+                String[] dFamLast = { "thiallor", "drian", "rev", "dandion", "kabradon",
+                                "molik", "hylon", "tuul", "sendalor", "tan", "nis", "ius", "talajiir",
+                                "jandilin", "liath", "roth", "sathurgiesh", "jerit" };
+                NameScheme dragonLast = new NameScheme(17, dFamFirst, dFamLast);
+                dragonbornLastNames.add(dragonLast);
+
+                RaceNameScheme halflingNames = new RaceNameScheme(4, dragonbornFirstNames, dragonbornLastNames);
+                return halflingNames;
+        }
+
+        public RaceNameScheme gnomeNames() {
+                ArrayList<NameScheme> gnomeFirstNames = new ArrayList<NameScheme>();
+                String[] gFirstNames = { "als", "alv", "boddy", "bro", "burg", "dim",
+                                "eld", "er", "fon", "fr", "ger", "gim", "glim", "jeb", "kell", "nam", "orr",
+                                "roon", "see", "sin", "warr", "wr", "zoo", "bimp", "bre", "cara", "car",
+                                "don", "duv", "ella", "elly", "lil", "loop", "lor", "mard", "ni", "orl",
+                                "roy", "sha", "ta", "way", "za" };
+                String[] gLastNames = { "ton", "yn", "nock", "cc", "ell", "ble", "on",
+                                "ky", "kin", "ug", "bo", "eddo", "en", "foodle", "dar", "dri", "enn",
+                                "nollin", "ena", "mip", "lin", "ella", "amil", "jobell", "wick", "li",
+                                "mottin", "illa", "nab", "ssa", "a", "wyn", "mil", "na", "wocket" };
+                NameScheme gnomeFirst = new NameScheme(18, gFirstNames, gLastNames);
+                String[] gFirstNick = { "ale", "ash", "bad", "cloak", "double", "filch", "fnip", "ku", "nim", "one",
+                                "pock", "sparkle", "stumble" };
+                String[] gLastNick = { "", "slosh", "hearth", "ger", "lock", "batter", "per", "shoe", "gem", "duck" };
+                NameScheme gnomeNicknames = new NameScheme(19, gFirstNick, gLastNick);
+                gnomeFirstNames.add(gnomeFirst);
+                gnomeFirstNames.add(gnomeNicknames);
+
+                ArrayList<NameScheme> gnomeLastNames = new ArrayList<NameScheme>();
+                String[] gFamFirst = { "ber", "daer", "folk", "gar", "nack", "mur", "nin", "raul", "schep", "tim",
+                                "tur" };
+                String[] gFamLast = { "en", "gel", "or", "rick", "le", "nig", "gel", "nor", "pen", "bers" };
+                NameScheme gnomeLast = new NameScheme(20, gFamFirst, gFamLast);
+                gnomeLastNames.add(gnomeLast);
+
+                RaceNameScheme gnomeNames = new RaceNameScheme(5, gnomeFirstNames, gnomeLastNames);
+                return gnomeNames;
+        }
+
+        public RaceNameScheme halfOrcNames() {
+                ArrayList<NameScheme> horcNames = new ArrayList<NameScheme>();
+                String[] horcFirstNames = { "den", "fen", "ge", "hen", "hol", "im", "kel",
+                                "kru", "mhur", "ron", "shu", "tho", "bag", "eme", "eng", "kans", "my", "nee",
+                                "ova", "own", "shaul", "sul", "vol", "yeve" };
+                String[] horcLastNames = { "eh", "g", "ll", "k", "sh", "h", "sk", "ren", "t",
+                                "mp", "kk", "gi", "n", "ong", "if", "ev", "ga", "ka", "en", "lda", "a",
+                                "ha" };
+                NameScheme orcName = new NameScheme(21, horcFirstNames, horcLastNames);
+                horcNames.add(orcName);
+
+                ArrayList<NameScheme> horcLast = new ArrayList<NameScheme>();
+
+                RaceNameScheme halfOrcNames = new RaceNameScheme(6, horcNames, horcLast);
+                return halfOrcNames;
+        }
+
+        public RaceNameScheme tieflingNames() {
+                ArrayList<NameScheme> tieflingFirstNames = new ArrayList<NameScheme>();
+                String[] tFirstNames = { "akme", "am", "bara", "dama", "eke", "lad",
+                                "kai", "leu", "mel", "mor", "pel", "ska", "the", "ak", "ana", "bry", "cri",
+                                "dam", "kall", "ler", "mak", "nem", "ori", "phel", "rie" };
+                String[] tLastNames = { "nos", "non", "kas", "kos", "mon", "os", "ron",
+                                "cis", "ech", "thos", "aios", "mos", "rai", "ta", "kis", "seis", "ella",
+                                "aia", "ista", "issa", "ria", "eia", "anna", "eta" };
+                NameScheme tiefName = new NameScheme(22, tFirstNames, tLastNames);
+                String[] tVirtueNames = { "Art", "Carrion", "Chant", "Creed", "Despair",
+                                "Excellence", "Fear", "Glory", "Hope", "Ideal", "Music", "Nowhere",
+                                "Open", "Poetry", "Quest", "Reverence", "Sorrow",
+                                "Temerity", "Torment", "Weary" };
+                String[] tVirtueLast = { "" };
+                NameScheme tiefVirtueName = new NameScheme(23, tVirtueNames, tVirtueLast);
+                tieflingFirstNames.add(tiefName);
+                tieflingFirstNames.add(tiefVirtueName);
+
+                ArrayList<NameScheme> tieflingLast = new ArrayList<NameScheme>();
+
+                RaceNameScheme tiefliengNames = new RaceNameScheme(7, tieflingFirstNames, tieflingLast);
+                return tiefliengNames;
+        }
 }
-
-/*
- * 
- * // Human names
- * // These are kind of complex, as there are different ethnicities with
- * different naming conventions. I'll come back to this
- * vector<string> cali_first = {"as", "bar", "has", "khe", "meh", "sude",
- * "zash", "ala", "ceid", "ham", "jas", "meil", "seip", "yash"};
- * vector<string> cali_last = {"eir", "deid", "med", "men", "iman", "la", "il",
- * "a", "mal", "ora", "eira", "eida"};
- * vector<string> cali_famf = {"bash", "dum", "jas", "khal", "mos", "pash",
- * "re"};
- * vector<string> cali_faml = {"a", "ein", "san", "id", "tana", "ar", "in"};
- * vector<vector<string>> cal_names = {cali_first, cali_last, cali_famf,
- * cali_faml};
- * 
- * vector<string> chon_first = {"dar", "dor", "even", "gor", "gri", "hel",
- * "mal", "mor", "ran", "ste", "arv", "esv", "jhes", "ker", "lur", "mir", "row",
- * "shan", "tess"};
- * vector<string> chon_last = {"vin", "n", "dur", "stag", "m", "ark", "dal",
- * "dd", "eene", "ele", "sail", "ri", "i", "an", "dri"};
- * vector<string> chon_famf = {"amble", "buck", "dun", "even", "grey", "tall",
- * "black", "white", "dunder"};
- * vector<string> chon_faml = {"crown", "man", "dragon", "wood", "castle",
- * "stag", "lord", "hill"};
- * vector<vector<string>> chon_names = {chon_first, chon_last, chon_famf,
- * chon_faml};
- * 
- * vector<string> dam_first = {"ba", "fad", "gla", "gri", "i", "ko", "miv",
- * "or", "pav", "ser", "aleth", "ka", "kater", "ma", "nata", "ol", "ta", "zo"};
- * vector<string> dam_last = {"r", "ei", "gor", "gan", "vor", "sef", "al", "el",
- * "ra", "nin", "li", "ma", "na"};
- * vector<string> dam_famf = {"ber", "cher", "dot", "kulen", "mar", "nemet",
- * "shem", "star"};
- * vector<string> dam_faml = {"sk", "nin", "ov", "ag"};
- * vector<vector<string>> dam_names = {dam_first, dam_last, dam_famf, dam_faml};
- * 
- * vector<string> ill_first = {"and", "bla", "bra", "fra", "ge", "land", "lu",
- * "mal", "sto", "tam", "ur", "ama", "beth", "ce", "keth", "ma", "olg", "sili",
- * "west"};
- * vector<string> ill_last = {"er", "th", "n", "cer", "r", "an", "frey", "a",
- * "ra"};
- * vector<string> ill_famf = {"bright", "horn", "lack", "storm", "wind", "dark",
- * "skull", "thunder"};
- * vector<string> ill_faml = {"wood", "raven", "man", "terror", "rivver",
- * "crow", "root", "sea"};
- * vector<vector<string>> ill_names = {ill_first, ill_last, ill_famf, ill_faml};
- * 
- * vector<string> mul_first = {"ao", "bare", "ehput", "ketho", "mum", "ram",
- * "so", "thazar", "ur", "ariz", "cha", "neph", "nul", "Muri", "sef", "tho",
- * "um", "zol"};
- * vector<string> mul_last = {"th", "ris", "-ki", "ed", "as", "-kehur", "-de",
- * "hur", "ima", "thi", "is", "ara", "la"};
- * vector<string> mul_famf = {"ank", "ansk", "fe", "hah", "nath", "sep",
- * "uuth"};
- * vector<string> mul_faml = {"halab", "uld", "zim", "pet", "andem", "ret",
- * "rakt"};
- * vector<vector<string>> mul_names = {mul_first, mul_last, mul_famf, mul_faml};
- * 
- * vector<string> rash_first = {"bori", "faur", "jan", "kani", "madi", "ralme",
- * "shau", "vladi", "fyev", "hul", "im", "nev", "shev", "tamm", "yul"};
- * vector<string> rash_last = {"vik", "gar", "dar", "thar", "slak", "mar",
- * "arra", "mith", "zel", "dra"};
- * vector<string> rash_famf = {"cher", "dyer", "iltaz", "murnyet", "staya",
- * "ulmo"};
- * vector<string> rash_faml = {"goba", "nina", "yara", "hara", "noga", "kina"};
- * vector<vector<string>> rash_names = {rash_first, rash_last, rash_famf,
- * rash_faml};
- * 
- * vector<string> shou_first = {"a", "che", "ch", "fa", "ji", "ju", "li", "lo",
- * "me", "o", "shu", "w", "ba", "ch", "le", "me", "qi", "ta"};
- * vector<string> shou_last = {"n", "i", "ang", "an", "ng", "en", "ao"};
- * vector<string> shou_famf = {"chi", "hu", "ka", "ku", "la", "li", "me", "pi",
- * "shi", "su", "ta", "wa"};
- * vector<string> shou_faml = {"en", "ang", "o", "ng", "i", "n", "m"};
- * vector<vector<string>> shou_names = {shou_first, shou_last, shou_famf,
- * shou_faml};
- * 
- * //Agosto, Astorio, Calabra, Domine, Falone, Marivaldi, Pisacar, Ramondo
- * vector<string> tur_first = {"an", "di", "marc", "pier", "rim", "rom", "sala",
- * "umb", "bal", "do", "fai", "jal", "lu", "mar", "qua", "se", "von"};
- * vector<string> tur_last = {"ton", "ero", "on", "ardo", "zar", "ama", "na",
- * "la", "isa", "ana", "ta", "ra", "lise", "da"};
- * vector<string> tur_famf = {"ago", "asto", "cala", "do", "fal", "mari", "pis",
- * "ram"};
- * vector<string> tur_faml = {"sto", "rio", "bra", "mine", "one", "valdi",
- * "car", "ondo"};
- * vector<vector<string>> tur_names = {tur_first, tur_last, tur_famf, tur_faml};
- * 
- * vector<vector<vector<string>>> human_names = {cal_names, chon_names,
- * dam_names, ill_names, mul_names, rash_names, shou_names, tur_names};
- * 
- * string humanName()
- * {
- * int ethnicity = rand() % human_names.size();
- * //cout << "Human ethnicity: " << ethnicity << "\n";
- * string name = "";
- * 
- * // FirstName FamilyName
- * int firstHalf = rand() % human_names[ethnicity][0].size();
- * int secondHalf = rand() % human_names[ethnicity][1].size();
- * name = name + human_names[ethnicity][0][firstHalf] +
- * human_names[ethnicity][1][secondHalf] + " ";
- * 
- * firstHalf = rand() % human_names[ethnicity][2].size();
- * secondHalf = rand() % human_names[ethnicity][3].size();
- * string lName = "";
- * lName = lName + human_names[ethnicity][2][firstHalf] +
- * human_names[ethnicity][3][secondHalf];
- * 
- * name[0] = toupper(name[0]);
- * lName[0] = toupper(lName[0]);
- * 
- * name = name + lName;
- * return name;
- * }
- * 
- * // Dragonborn names
- * vector<string> drag_first = {"arj", "bal", "bhar", "don", "ghe", "hesk",
- * "kr", "med", "meh", "nad", "pand", "pat", "rho", "sham", "shed", "tar",
- * "tor", "ak", "bi", "fari", "har", "havi", "jhe", "ka", "kor", "mish", "na",
- * "per", "rai", "so", "sur", "tha", "uad"};
- * vector<string> drag_last = {"han", "asar", "ash", "aar", "sh", "an", "iv",
- * "rash", "en", "arr", "jed", "rin", "gar", "inn", "hun", "ra", "ri", "deh",
- * "ann", "lar", "va", "la", "ina", "jit"};
- * vector<string>drag_famf = {"clethtin", "daarden", "delmi", "drache",
- * "fenken", "kepesh", "kerr", "kimba", "linxaka", "myas", "nemmo", "norix",
- * "ophinsh", "prexi", "shestende", "turnu", "verthi", "yar"};
- * vector<string>drag_faml = {"thiallor", "drian", "rev", "dandion", "kabradon",
- * "molik", "hylon", "tuul", "sendalor", "tan", "nis", "ius", "talajiir",
- * "jandilin", "liath", "roth", "sathurgiesh", "jerit"};
- * 
- * string dragonName()
- * {
- * // FirstName FamilyName
- * int firstHalf = rand() % drag_first.size();
- * int secondHalf = rand() % drag_last.size();
- * string name = "";
- * name = name + drag_first[firstHalf] + drag_last[secondHalf] + " ";
- * 
- * firstHalf = rand() % drag_famf.size();
- * secondHalf = rand() % drag_faml.size();
- * string lName = "";
- * lName = lName + drag_famf[firstHalf];
- * lName = lName + drag_faml[secondHalf];
- * 
- * name[0] = toupper(name[0]);
- * lName[0] = toupper(lName[0]);
- * 
- * name = name + lName;
- * return name;
- * }
- * 
- * 
- * // Gnome names
- * // Gnomes should have a few names, and possibly a nickname or two.
- * vector<string> gn_first = {"als", "alv", "boddy", "bro", "burg", "dim",
- * "eld", "er", "fon", "fr", "ger", "gim", "glim", "jeb", "kell", "nam", "orr",
- * "roon", "see", "sin", "warr", "wr", "zoo", "bimp", "bre", "cara", "car",
- * "don", "duv", "ella", "elly", "lil", "loop", "lor", "mard", "ni", "orl",
- * "roy", "sha", "ta", "way", "za"};
- * vector<string> gn_last = {"ton", "yn", "nock", "cc", "ell", "ble", "on",
- * "ky", "kin", "ug", "bo", "eddo", "en", "foodle", "dar", "dri", "enn",
- * "nollin", "ena", "mip", "lin", "ella", "amil", "jobell", "wick", "li",
- * "mottin", "illa", "nab", "ssa", "a", "wyn", "mil", "na", "wocket"};
- * 
- * string gnomeName()
- * {
- * int firstHalf = rand() % gn_first.size();
- * int secondHalf = rand() % gn_last.size();
- * string name = "";
- * name = name + gn_first[firstHalf] + gn_last[secondHalf] + " ";
- * 
- * name[0] = toupper(name[0]);
- * 
- * //TODO: Add extra gnome names
- * 
- * return name;
- * }
- * 
- * // Half-elf's use human or elf names
- * string halfelfName()
- * {
- * //TODO: Human name function currently generates full human name, we need just
- * first or last
- * int name = rand() % 2;
- * int ethnicity = rand() % human_names.size();
- * 
- * int firstHalf;
- * int secondHalf;
- * string fullname = "";
- * if( name )
- * {
- * // if 1, give elf first name
- * firstHalf = rand() % elf_first.size();
- * secondHalf = rand() % elf_last.size();
- * fullname = fullname + elf_first[firstHalf] + elf_last[secondHalf] + " ";
- * }
- * else
- * {
- * // else give human first name
- * firstHalf = rand() % human_names[ethnicity][0].size();
- * secondHalf = rand() % human_names[ethnicity][1].size();
- * fullname = fullname + human_names[ethnicity][0][firstHalf] +
- * human_names[ethnicity][1][secondHalf] + " ";
- * }
- * 
- * // same for family name
- * name = rand() % 2;
- * string lName = "";
- * if( name )
- * {
- * // if 1 give human name
- * firstHalf = rand() % human_names[ethnicity][2].size();
- * secondHalf = rand() % human_names[ethnicity][3].size();
- * lName = lName + human_names[ethnicity][2][firstHalf] +
- * human_names[ethnicity][3][secondHalf];
- * }
- * else
- * {
- * // else give elf name
- * firstHalf = rand() % elf_famfirst.size();
- * secondHalf = rand() % elf_famlast.size();
- * lName = lName + elf_famfirst[firstHalf];
- * lName = lName + elf_famlast[secondHalf];
- * }
- * 
- * fullname[0] = toupper(fullname[0]);
- * lName[0] = toupper(lName[0]);
- * 
- * fullname = fullname + lName;
- * return fullname;
- * }
- * 
- * // Half-orc names
- * vector<string> orc_first = {"den", "fen", "ge", "hen", "hol", "im", "kel",
- * "kru", "mhur", "ron", "shu", "tho", "bag", "eme", "eng", "kans", "my", "nee",
- * "ova", "own", "shaul", "sul", "vol", "yeve"};
- * vector<string> orc_last = {"eh", "g", "ll", "k", "sh", "h", "sk", "ren", "t",
- * "mp", "kk", "gi", "n", "ong", "if", "ev", "ga", "ka", "en", "lda", "a",
- * "ha"};
- * 
- * string halforcName()
- * {
- * 
- * int firstHalf = rand() % orc_first.size();
- * int secondHalf = rand() % orc_last.size();
- * string name = "";
- * name = name + orc_first[firstHalf] + orc_last[secondHalf];
- * 
- * name[0] = toupper(name[0]);
- * 
- * return name;
- * }
- * 
- * // Tiefling names
- * vector<string> tief_first = {"akme", "am", "bara", "dama", "eke", "lad",
- * "kai", "leu", "mel", "mor", "pel", "ska", "the", "ak", "ana", "bry", "cri",
- * "dam", "kall", "ler", "mak", "nem", "ori", "phel", "rie"};
- * vector<string> tief_last = {"nos", "non", "kas", "kos", "mon", "os", "ron",
- * "cis", "ech", "thos", "aios", "mos", "rai", "ta", "kis", "seis", "ella",
- * "aia", "ista", "issa", "ria", "eia", "anna", "eta"};
- * 
- * string tieflingName()
- * {
- * int firstHalf = rand() % tief_first.size();
- * int secondHalf = rand() % tief_last.size();
- * string name = "";
- * name = name + tief_first[firstHalf] + tief_last[secondHalf];
- * 
- * name[0] = toupper(name[0]);
- * 
- * return name;
- * }
- * 
- * 
- * void createMap()
- * {
- * raceName.insert(pair<int, string(*)()>(0, hdwarfName));
- * raceName.insert(pair<int, string(*)()>(1, mdwarfName));
- * raceName.insert(pair<int, string(*)()>(2, elfName));
- * raceName.insert(pair<int, string(*)()>(3, elfName));
- * raceName.insert(pair<int, string(*)()>(4, halflingName));
- * raceName.insert(pair<int, string(*)()>(5, halflingName));
- * raceName.insert(pair<int, string(*)()>(6, humanName));
- * raceName.insert(pair<int, string(*)()>(7, dragonName));
- * raceName.insert(pair<int, string(*)()>(8, gnomeName));
- * raceName.insert(pair<int, string(*)()>(9, gnomeName));
- * raceName.insert(pair<int, string(*)()>(10, halfelfName));
- * raceName.insert(pair<int, string(*)()>(11, halforcName));
- * raceName.insert(pair<int, string(*)()>(12, tieflingName));
- * raceName.insert(pair<int, string(*)()>(13, elfName));
- * }
- * 
- * string createName(int race)
- * {
- * string test;
- * if( race < (int)raceName.size() )
- * {
- * return raceName[race]();
- * }
- * // Error Code 1107
- * QString error = "Cannot find race to build: ";
- * error.append(QString::number(race));
- * logError(createErr, error);
- * return "Error";
- * }
- * 
- */

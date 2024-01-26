@@ -7,6 +7,7 @@ import com.npc.PanacheEntities.RaceEntity;
 public class NpcRace implements Serializable {
     private int id;
     private int user_id;
+    private int name_type;
     private String name;
     private int alignment_skew;
     private int[] heightRange;
@@ -15,10 +16,11 @@ public class NpcRace implements Serializable {
     private Integer[] ability_score_increase;
     private Integer[] ability_score_increase_value;
 
-    public NpcRace(int user_id, String name, int alignment, int[] height, int[] weight, int[] age, Integer[] asi,
+    public NpcRace(int user_id, String name, int nameType, int alignment, int[] height, int[] weight, int[] age, Integer[] asi,
             Integer[] asiv) {
         this.user_id = user_id;
         this.name = name;
+        this.name_type = nameType;
         this.alignment_skew = alignment;
         this.heightRange = height;
         this.weightRange = weight;
@@ -33,6 +35,7 @@ public class NpcRace implements Serializable {
         this.id = raceEntity.id.intValue();
         this.user_id = raceEntity.user_id;
         this.name = raceEntity.name;
+        this.name_type = raceEntity.name_type;
         this.alignment_skew = raceEntity.alignment_skew;
         this.heightRange = new int[]{raceEntity.height.lower(), raceEntity.height.upper() - 1};
         this.weightRange = new int[]{raceEntity.weight.lower(), raceEntity.weight.upper() - 1};
@@ -59,6 +62,14 @@ public class NpcRace implements Serializable {
 
     public void setName(String toSet) {
         this.name = toSet;
+    }
+
+    public int getNameType() {
+        return name_type;
+    }
+
+    public void setNameType(int toSet) {
+        this.name_type = toSet;
     }
 
     public int getAlignment() {

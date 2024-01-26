@@ -19,6 +19,9 @@ public class RaceEntity extends PanacheEntity {
     public String name;
 
     @Column
+    public int name_type;
+
+    @Column
     public int alignment_skew;
 
     @Type(PostgreSQLRangeType.class)
