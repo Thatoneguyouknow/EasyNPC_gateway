@@ -7,7 +7,6 @@ import com.npc.Models.User;
 import com.npc.PanacheEntities.UserEntity;
 import com.npc.Resources.models.UserResponse;
 
-import io.quarkus.panache.common.Sort;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
