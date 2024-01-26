@@ -26,7 +26,7 @@ public class NpcSubrace implements Serializable {
         this.ability_score_increase_value = subraceEntity.ability_score_increase_value;
     }
 
-    public int GetID() {
+    public int getID() {
         return id;
     }
 
