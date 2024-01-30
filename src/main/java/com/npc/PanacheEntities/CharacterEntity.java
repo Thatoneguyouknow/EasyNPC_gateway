@@ -12,35 +12,38 @@ public class CharacterEntity extends PanacheEntity {
     public String name;
 
     @Column
-    public int created_user_id;
+    public Integer created_user_id;
 
     @Column
-    public int class_id;
+    public Integer class_id;
 
     @Column
-    public int race_id;
+    public Integer race_id;
 
     @Column
-    public int level;
+    public Integer subrace_id;
 
     @Column
-    public int[] stats;
+    public Integer level;
 
     @Column
-    public int hit_points;
+    public Integer[] stats;
 
     @Column
-    public int alignment;
+    public Integer hit_points;
+
+    @Column
+    public Integer alignment;
 
     @Column
     public String[] personality_traits;
 
     @Column
-    public int age;
+    public Integer age;
 
     @Column
-    public int[] height;
+    public Integer[] height;
 
     @Column
-    public int weight;
+    public Integer weight;
 }
