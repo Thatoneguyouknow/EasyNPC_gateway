@@ -8,10 +8,10 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
 @Table(name = "users")
-public class UserEntity extends PanacheEntity{
-    
-    @Column(name = "uid")
-    public int user_id;
+public class UserEntity extends PanacheEntity {
+
+    @Column(name = "user_type_id")
+    public int user_type;
 
     @Column
     public String email;
