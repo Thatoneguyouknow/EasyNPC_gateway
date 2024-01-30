@@ -44,6 +44,10 @@ public class NpcCharacter implements Serializable {
         this.stats = charEntity.stats;
         this.hit_points = charEntity.hit_points;
         this.alignment = charEntity.alignment;
+        this.personality = charEntity.personality_traits;
+        this.age = charEntity.age;
+        this.height = charEntity.height;
+        this.weight = charEntity.weight;
     }
 
     public int getId() {
