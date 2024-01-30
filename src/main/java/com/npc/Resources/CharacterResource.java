@@ -4,8 +4,11 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;
 
+import com.npc.Models.NpcCharacter;
 import com.npc.PanacheEntities.CharacterEntity;
+import com.npc.Resources.models.CharacterResponse;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import io.quarkus.panache.common.Sort;
@@ -15,8 +18,17 @@ import io.quarkus.panache.common.Sort;
 public class CharacterResource {
 
     @GET
-    public List<CharacterEntity> get() {
-        return CharacterEntity.listAll(Sort.by("name"));
+    public CharacterResponse get() {
+        List<CharacterEntity> entities = CharacterEntity.listAll(Sort.by("id"));
+
+        List<NpcCharacter> npcCharacters = new ArrayList<>();
+        if (entities != null) {
+            for (CharacterEntity entity : entities) {
+                NpcCharacter npcCharacter = new NpcCharacter(entity);
+                npcCharacters.add(npcCharacter);
+            }
+        }
+        return new CharacterResponse(npcCharacters);
     }
-    
+
 }

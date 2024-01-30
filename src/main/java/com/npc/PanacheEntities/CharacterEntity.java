@@ -5,23 +5,20 @@ import jakarta.persistence.*;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
-@Table(name = "npc_character")
+@Table(name = "characters")
 public class CharacterEntity extends PanacheEntity {
 
-    @Column(length = 225, unique = false)
+    @Column
     public String name;
 
-    @Column(unique = false)
-    public int raceID;
+    @Column
+    public int created_user_id;
 
     @Column
-    public int classID;
+    public int class_id;
 
     @Column
-    public int[] alignment;
-
-    @Column(length = 255)
-    public String personality;
+    public int race_id;
 
     @Column
     public int level;
@@ -30,6 +27,20 @@ public class CharacterEntity extends PanacheEntity {
     public int[] stats;
 
     @Column
-    public int hp;
+    public int hit_points;
 
+    @Column
+    public int alignment;
+
+    @Column
+    public String[] personality_traits;
+
+    @Column
+    public int age;
+
+    @Column
+    public int[] height;
+
+    @Column
+    public int weight;
 }
